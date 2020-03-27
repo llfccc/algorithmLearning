@@ -9,6 +9,9 @@ class Solution:
         if len_P>len_T:
             return -1
 
+        while(i<len_T and j<len_P):
+            if 
+
         for i in range(len_T-len_P+1):
             for j in range(len_P):
                 if haystack[i+j]!=needle[j]:

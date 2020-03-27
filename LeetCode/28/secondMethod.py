@@ -9,12 +9,14 @@ class Solution:
         len_P=len(P)
 
         next_list=self.get_next_val(P)
-        import pdb;pdb.set_trace()
+        print(next_list)
+        return 
         if len_P>len_T:
             return -1
         i=0
         j=0
         n=0
+        
         while(i<len_T):
             # print("第{n}轮---------------".format(n=n))
             n+=1
@@ -35,26 +37,26 @@ class Solution:
                  
         return -1
     def get_next_val(self,p):
-
-        _next = [0] * (len(p)+1) #      A  B  C  D  A  B  D
-        _next[0] = -1            # [-1, 0, 0, 0, 0, 1, 2, 0]
-        i, j = 0, -1
-        while (i < len(p)):
-            # print(i,j)
-            # print(p[i] , p[j])
-            # import pdb;pdb.set_trace()
-            if (j == -1 or p[i] == p[j]):
-                i += 1
-                j += 1 
-                _next[i] = j
+        next_list=[-10]*len(p)
+        next_list[0] = -1
+        j = 0
+        k = -1
+        while j < len(p) - 1:
+            print("*****",j,k)
+            print("#####",p[j],p[k])
+            if k == -1 or p[j] == p[k]:
+                j = j + 1
+                k = k + 1
+                next_list[j] = k
             else:
-                j = _next[j]
-            #print(_next)
-        return _next
+                k = next_list[k]
+        return next_list
 
 
 
-haystack="hello"
-needle="ll"
+
+
+haystack="hello24234234df"
+needle="ababababe"
 result=Solution().strStr(haystack,needle)
 print(result)
