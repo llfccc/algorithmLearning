@@ -49,7 +49,7 @@ class Solution:
                 k = k + 1
                 next_list[j] = k
             else:
-                k = next_list[k]
+                k = next_list[k]      
         return next_list
 
 
